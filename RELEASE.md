@@ -123,7 +123,9 @@ Initial release.
 
 **General**
 - No GUIs, HUD overlays or chat messages — everything is rendered on the item and block models.
-- Recipes for all six items; dedicated creative tab.
+- Recipes: the compass is shaped (dye, iron, redstone around a vanilla compass) and the relay is shapeless (dye + compass + redstone torch + iron block). No dye or green dye gives Olive, black gives Black, brown gives Camo.
+- Compasses and relays can be re-dyed in the crafting grid (not into their current colour); compasses keep their relay link.
+- Dedicated creative tab.
 
 ***
 

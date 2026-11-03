@@ -2,32 +2,26 @@
  "type": "minecraft:crafting_shaped",
  "category": "equipment",
  "pattern": [
-  "AIB",
+  "DIR",
   "ICI",
-  "LRL"
+  " I "
  ],
  "key": {
-  "A": {
-   "item": "minecraft:black_dye"
-  },
-  "B": {
-   "item": "minecraft:black_dye"
-  },
   "I": {
    "item": "minecraft:iron_ingot"
   },
   "C": {
    "item": "minecraft:compass"
   },
-  "L": {
-   "item": "minecraft:blue_dye"
-  },
   "R": {
    "item": "minecraft:redstone"
+  },
+  "D": {
+   "item": "minecraft:green_dye"
   }
  },
  "result": {
-  "item": "tacticalcompass:tactical_compass_black",
+  "item": "tacticalcompass:tactical_compass_olive",
   "count": 1
  }
 }

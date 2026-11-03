@@ -3,12 +3,15 @@ package com.tacticalcompass;
 import com.tacticalcompass.block.CommsRelayBlock;
 import com.tacticalcompass.block.CommsRelayBlockEntity;
 import com.tacticalcompass.item.TacticalCompassItem;
+import com.tacticalcompass.recipe.DyeSwapRecipe;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.crafting.RecipeSerializer;
+import net.minecraft.world.item.crafting.SimpleCraftingRecipeSerializer;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.entity.BlockEntityType;
@@ -30,6 +33,7 @@ public class TacticalCompass {
     public static final DeferredRegister<Block> BLOCKS = DeferredRegister.create(ForgeRegistries.BLOCKS, MODID);
     public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, MODID);
     public static final DeferredRegister<BlockEntityType<?>> BLOCK_ENTITIES = DeferredRegister.create(ForgeRegistries.BLOCK_ENTITY_TYPES, MODID);
+    public static final DeferredRegister<RecipeSerializer<?>> RECIPES = DeferredRegister.create(ForgeRegistries.RECIPE_SERIALIZERS, MODID);
     public static final DeferredRegister<CreativeModeTab> TABS = DeferredRegister.create(Registries.CREATIVE_MODE_TAB, MODID);
 
     public static final Map<Variant, RegistryObject<Block>> RELAYS = new EnumMap<>(Variant.class);
@@ -51,6 +55,9 @@ public class TacticalCompass {
             () -> BlockEntityType.Builder.of(CommsRelayBlockEntity::new,
                     RELAYS.values().stream().map(RegistryObject::get).toArray(Block[]::new)).build(null));
 
+    public static final RegistryObject<RecipeSerializer<DyeSwapRecipe>> DYE_SWAP = RECIPES.register("dye_swap",
+            () -> new SimpleCraftingRecipeSerializer<>(DyeSwapRecipe::new));
+
     public static final RegistryObject<CreativeModeTab> TAB = TABS.register("main", () -> CreativeModeTab.builder()
             .title(Component.translatable("itemGroup.tacticalcompass"))
             .icon(() -> new ItemStack(COMPASSES.get(Variant.OLIVE).get()))
@@ -65,6 +72,7 @@ public class TacticalCompass {
         BLOCKS.register(bus);
         ITEMS.register(bus);
         BLOCK_ENTITIES.register(bus);
+        RECIPES.register(bus);
         TABS.register(bus);
     }
 }
