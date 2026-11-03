@@ -143,4 +143,3 @@ Initial release.
 ## Known Limitations
 - Forge 1.20.1 only (no Fabric/NeoForge build yet).
 - A compass lying on the ground always shows a north-up dial (dropped items carry no facing).
-- In item frames, the compass is displayed unfolded flat; the dial reading there is decorative.
