@@ -15,7 +15,6 @@ import net.minecraft.util.Mth;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.entity.HumanoidArm;
 import net.minecraft.world.entity.LivingEntity;
-import net.minecraft.world.entity.decoration.ItemFrame;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemDisplayContext;
 import net.minecraft.world.item.ItemStack;
@@ -61,7 +60,8 @@ public class CompassItemRenderer extends BlockEntityWithoutLevelRenderer {
             return;
         }
         Variant v = compass.variant();
-        if (ctx == ItemDisplayContext.GUI) {
+        if (ctx == ItemDisplayContext.GUI || ctx == ItemDisplayContext.FIXED) {
+            // inventory sprite in slots and item frames, like vanilla flat items
             renderPart("icon", v, stack, pose, buffers, light, overlay);
             return;
         }
@@ -94,7 +94,6 @@ public class CompassItemRenderer extends BlockEntityWithoutLevelRenderer {
         // heading of the compass body (0 = north, clockwise) and where it sits in the world
         float yaw = 180.0F;
         Vec3 origin = null;
-        ItemFrame frame = ClientEvents.renderingFrame;
         if (holder != null) {
             if (ctx.firstPerson()) {
                 yaw = holder.getViewYRot(pt);
@@ -104,10 +103,6 @@ public class CompassItemRenderer extends BlockEntityWithoutLevelRenderer {
                 yaw = Mth.rotLerp(pt, holder.yBodyRotO, holder.yBodyRot);
             }
             origin = holder.getPosition(pt);
-        } else if (ctx == ItemDisplayContext.FIXED && frame != null) {
-            yaw = frame.getDirection().getAxis().isHorizontal()
-                    ? frame.getDirection().toYRot() : 180.0F - frame.getRotation() * 45.0F;
-            origin = frame.position();
         }
         rig.heading = Mth.positiveModulo(yaw + 180.0F, 360.0F);
 
@@ -133,9 +128,6 @@ public class CompassItemRenderer extends BlockEntityWithoutLevelRenderer {
         if (ctx.firstPerson()) {
             pose.translate(0.5F, 0.5F, 0.5F); // undo ItemRenderer's centring; we work in view space
             firstPersonPose(pose, arm, anim, scope, age, rig);
-        } else if (ctx == ItemDisplayContext.FIXED) {
-            rig.lid = 180.0F; // unfolded flat in an item frame
-            pose.translate(0.0F, 6.0F / 16, 5.2F / 16);
         } else {
             if (ctx == ItemDisplayContext.GROUND) {
                 rig.lid = 0.0F;

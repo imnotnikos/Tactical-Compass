@@ -4,20 +4,17 @@ import com.tacticalcompass.TacticalCompass;
 import com.tacticalcompass.Variant;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.LivingEntity;
-import net.minecraft.world.entity.decoration.ItemFrame;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.client.event.EntityRenderersEvent;
 import net.minecraftforge.client.event.ModelEvent;
-import net.minecraftforge.client.event.RenderItemInFrameEvent;
 import net.minecraftforge.client.event.RenderLivingEvent;
 import net.minecraftforge.event.TickEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 
 public final class ClientEvents {
-    /** Entity / frame currently being rendered, so the item renderer knows whose compass it is drawing. */
+    /** Entity currently being rendered, so the item renderer knows whose compass it is drawing. */
     static LivingEntity renderingEntity;
-    static ItemFrame renderingFrame;
 
     static final String[] COMPASS_PARTS = {"base", "lid", "popup", "needle", "card", "icon"};
 
@@ -68,11 +65,6 @@ public final class ClientEvents {
         @SubscribeEvent
         public static void postLiving(RenderLivingEvent.Post<?, ?> event) {
             renderingEntity = null;
-        }
-
-        @SubscribeEvent
-        public static void itemFrame(RenderItemInFrameEvent event) {
-            renderingFrame = event.getItemFrameEntity();
         }
     }
 }

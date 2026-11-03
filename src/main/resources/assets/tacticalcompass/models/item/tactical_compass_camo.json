@@ -109,8 +109,8 @@
   },
   "fixed": {
    "rotation": [
-    90,
     0,
+    180,
     0
    ],
    "translation": [
