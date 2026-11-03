@@ -1,0 +1,8 @@
+{
+ "replace": false,
+ "values": [
+  "tacticalcompass:comms_relay_black",
+  "tacticalcompass:comms_relay_olive",
+  "tacticalcompass:comms_relay_camo"
+ ]
+}

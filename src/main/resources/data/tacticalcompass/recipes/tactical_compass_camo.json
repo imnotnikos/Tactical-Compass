@@ -1,0 +1,33 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "equipment",
+ "pattern": [
+  "AIB",
+  "ICI",
+  "LRL"
+ ],
+ "key": {
+  "A": {
+   "item": "minecraft:green_dye"
+  },
+  "B": {
+   "item": "minecraft:brown_dye"
+  },
+  "I": {
+   "item": "minecraft:iron_ingot"
+  },
+  "C": {
+   "item": "minecraft:compass"
+  },
+  "L": {
+   "item": "minecraft:lime_dye"
+  },
+  "R": {
+   "item": "minecraft:redstone"
+  }
+ },
+ "result": {
+  "item": "tacticalcompass:tactical_compass_camo",
+  "count": 1
+ }
+}

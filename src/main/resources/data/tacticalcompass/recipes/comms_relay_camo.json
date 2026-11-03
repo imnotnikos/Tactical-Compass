@@ -1,0 +1,33 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "redstone",
+ "pattern": [
+  "ATB",
+  "IRI",
+  "ILI"
+ ],
+ "key": {
+  "A": {
+   "item": "minecraft:green_dye"
+  },
+  "B": {
+   "item": "minecraft:brown_dye"
+  },
+  "I": {
+   "item": "minecraft:iron_ingot"
+  },
+  "T": {
+   "item": "minecraft:lightning_rod"
+  },
+  "R": {
+   "item": "minecraft:redstone_block"
+  },
+  "L": {
+   "item": "minecraft:lime_dye"
+  }
+ },
+ "result": {
+  "item": "tacticalcompass:comms_relay_camo",
+  "count": 1
+ }
+}

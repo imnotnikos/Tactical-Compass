@@ -1,0 +1,32 @@
+{
+ "textures": {
+  "0": "tacticalcompass:item/compass/atlas_camo",
+  "card": "tacticalcompass:item/compass/card_camo",
+  "particle": "tacticalcompass:item/compass/icon_camo"
+ },
+ "elements": [
+  {
+   "from": [
+    4.4,
+    2.02,
+    4.9
+   ],
+   "to": [
+    11.6,
+    2.08,
+    12.1
+   ],
+   "faces": {
+    "up": {
+     "uv": [
+      0,
+      0,
+      16,
+      16
+     ],
+     "texture": "#card"
+    }
+   }
+  }
+ ]
+}
