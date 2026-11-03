@@ -1,0 +1,9 @@
+{
+ "itemGroup.tacticalcompass": "Tactical Compass",
+ "item.tacticalcompass.tactical_compass_black": "Tactical Compass (Black)",
+ "block.tacticalcompass.comms_relay_black": "Communications Relay (Black)",
+ "item.tacticalcompass.tactical_compass_olive": "Tactical Compass (Olive)",
+ "block.tacticalcompass.comms_relay_olive": "Communications Relay (Olive)",
+ "item.tacticalcompass.tactical_compass_camo": "Tactical Compass (Camo)",
+ "block.tacticalcompass.comms_relay_camo": "Communications Relay (Camo)"
+}

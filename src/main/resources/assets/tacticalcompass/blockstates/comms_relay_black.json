@@ -1,0 +1,19 @@
+{
+ "variants": {
+  "facing=north": {
+   "model": "tacticalcompass:block/comms_relay_black"
+  },
+  "facing=east": {
+   "model": "tacticalcompass:block/comms_relay_black",
+   "y": 90
+  },
+  "facing=south": {
+   "model": "tacticalcompass:block/comms_relay_black",
+   "y": 180
+  },
+  "facing=west": {
+   "model": "tacticalcompass:block/comms_relay_black",
+   "y": 270
+  }
+ }
+}
