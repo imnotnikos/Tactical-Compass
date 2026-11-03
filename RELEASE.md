@@ -75,7 +75,7 @@ GitHub About (matches the style of the other repos):
 
 **Icon**: `assets/icon.png`
 
-**Gallery suggestions**: social preview banner; first-person raised view (heading + time readable); hold view; open relay with radar screen; the three colourways side by side; third-person holding the relay.
+**Gallery suggestions**: social preview banner; the recipe GIFs in `assets/recipes/`; first-person raised view (heading + time readable); hold view; open relay with radar screen; the three colourways side by side; third-person holding the relay.
 
 **Links**: Source → GitHub repo · Issues → GitHub issues · Discord → https://discord.gg/9xJgzNqEaJ
 
