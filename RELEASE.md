@@ -75,7 +75,7 @@ GitHub About (matches the style of the other repos):
 
 **Icon**: `assets/icon.png`
 
-**Gallery suggestions**: social preview banner; the recipe GIFs in `assets/recipes/`; first-person raised view (heading + time readable); hold view; open relay with radar screen; the three colourways side by side; third-person holding the relay.
+**Gallery**: upload `assets/screenshots/relays.jpg` (featured), `compass_raised.jpg`, `compass_dual.jpg`, `relay_closeup.jpg`, plus the recipe GIFs in `assets/recipes/` and the social preview banner.
 
 **Links**: Source → GitHub repo · Issues → GitHub issues · Discord → https://discord.gg/9xJgzNqEaJ
 
@@ -134,7 +134,7 @@ Initial release.
 - [ ] Confirm the repo URL `github.com/imnotnikos/Tactical-Compass` (it is written into `mods.toml` as the display URL and issue tracker).
 - [ ] `./gradlew build` and grab `build/libs/tacticalcompass-1.0.0.jar`.
 - [ ] Test the jar outside the dev environment: a normal Forge 1.20.1 client profile, plus a dedicated server with two players.
-- [ ] Take gallery screenshots (dev client screenshots land in `run/screenshots/`).
+- [x] Gallery screenshots: `assets/screenshots/`.
 - [ ] Create the GitHub repo, push, set the social preview, publish the `v1.0.0` release.
 - [ ] Create the Modrinth project, upload the version, submit for review.
 - [ ] Create the CurseForge project, upload the file, submit for review.

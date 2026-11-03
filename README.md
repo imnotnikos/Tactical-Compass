@@ -37,6 +37,15 @@ Tactical Compass is a **Forge** mod for Minecraft 1.20.1 that adds a flip-up mil
 
 **Multiplayer Ready**: Other players see your compass flip open, see you raise it to read, and see relay lids swing. Links are stored on the item, so they survive restarts and trading.
 
+## Screenshots
+<img src="assets/screenshots/relays.jpg" width="100%" alt="All three relay colourways, open and closed" />
+
+<img src="assets/screenshots/compass_raised.jpg" width="100%" alt="Raised compass in black, olive and camo with heading and time readouts" />
+
+<img src="assets/screenshots/compass_dual.jpg" width="100%" alt="Black and olive compasses held in both hands" />
+
+<img src="assets/screenshots/relay_closeup.jpg" width="100%" alt="Close-up of open relays with radar screens" />
+
 ## Controls
 
 **Compass**
