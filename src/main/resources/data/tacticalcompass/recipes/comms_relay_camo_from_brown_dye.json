@@ -1,0 +1,22 @@
+{
+ "type": "minecraft:crafting_shapeless",
+ "category": "redstone",
+ "ingredients": [
+  {
+   "item": "minecraft:brown_dye"
+  },
+  {
+   "item": "minecraft:compass"
+  },
+  {
+   "item": "minecraft:redstone_torch"
+  },
+  {
+   "item": "minecraft:iron_block"
+  }
+ ],
+ "result": {
+  "item": "tacticalcompass:comms_relay_camo",
+  "count": 1
+ }
+}

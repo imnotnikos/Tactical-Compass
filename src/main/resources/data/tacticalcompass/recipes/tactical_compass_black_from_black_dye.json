@@ -1,0 +1,27 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "equipment",
+ "pattern": [
+  "DIR",
+  "ICI",
+  " I "
+ ],
+ "key": {
+  "I": {
+   "item": "minecraft:iron_ingot"
+  },
+  "C": {
+   "item": "minecraft:compass"
+  },
+  "R": {
+   "item": "minecraft:redstone"
+  },
+  "D": {
+   "item": "minecraft:black_dye"
+  }
+ },
+ "result": {
+  "item": "tacticalcompass:tactical_compass_black",
+  "count": 1
+ }
+}

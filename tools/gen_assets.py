@@ -886,6 +886,11 @@ def lcd_tex(pal):
     return img
 
 
+# crafting dye -> colourway (None = no dye); keep in sync with DyeSwapRecipe.java
+RECIPE_DYES = [(None, 'olive'), ('minecraft:green_dye', 'olive'), ('minecraft:black_dye', 'black'),
+               ('minecraft:brown_dye', 'camo')]
+
+
 # ================================================================ main
 
 def main():
@@ -966,21 +971,25 @@ def main():
             'type': 'minecraft:block',
             'pools': [{'rolls': 1, 'entries': [{'type': 'minecraft:item', 'name': f'{MOD}:{name}'}],
                        'conditions': [{'condition': 'minecraft:survives_explosion'}]}]})
-        d1, d2 = pal['dyes']
-        out(f'data/{MOD}/recipes/tactical_compass_{v}.json', {
+
+    # recipes: the dye picks the colourway (no dye = olive); DyeSwapRecipe handles re-dyeing
+    for dye, v in RECIPE_DYES:
+        suffix = '' if dye is None or (v == 'olive' and dye is None) else f'_from_{dye.split(":")[1]}'
+        key = {'I': {'item': 'minecraft:iron_ingot'}, 'C': {'item': 'minecraft:compass'},
+               'R': {'item': 'minecraft:redstone'}}
+        if dye:
+            key['D'] = {'item': dye}
+        out(f'data/{MOD}/recipes/tactical_compass_{v}{suffix}.json', {
             'type': 'minecraft:crafting_shaped', 'category': 'equipment',
-            'pattern': ['AIB', 'ICI', 'LRL'],
-            'key': {'A': {'item': d1}, 'B': {'item': d2}, 'I': {'item': 'minecraft:iron_ingot'},
-                    'C': {'item': 'minecraft:compass'}, 'L': {'item': pal['led_dye']},
-                    'R': {'item': 'minecraft:redstone'}},
+            'pattern': ['DIR' if dye else ' IR', 'ICI', ' I '], 'key': key,
             'result': {'item': f'{MOD}:tactical_compass_{v}', 'count': 1}})
-        out(f'data/{MOD}/recipes/{name}.json', {
-            'type': 'minecraft:crafting_shaped', 'category': 'redstone',
-            'pattern': ['ATB', 'IRI', 'ILI'],
-            'key': {'A': {'item': d1}, 'B': {'item': d2}, 'I': {'item': 'minecraft:iron_ingot'},
-                    'T': {'item': 'minecraft:lightning_rod'}, 'R': {'item': 'minecraft:redstone_block'},
-                    'L': {'item': pal['led_dye']}},
-            'result': {'item': f'{MOD}:{name}', 'count': 1}})
+        ingredients = [{'item': 'minecraft:compass'}, {'item': 'minecraft:redstone_torch'}, {'item': 'minecraft:iron_block'}]
+        if dye:
+            ingredients.insert(0, {'item': dye})
+        out(f'data/{MOD}/recipes/comms_relay_{v}{suffix}.json', {
+            'type': 'minecraft:crafting_shapeless', 'category': 'redstone', 'ingredients': ingredients,
+            'result': {'item': f'{MOD}:comms_relay_{v}', 'count': 1}})
+    out(f'data/{MOD}/recipes/dye_swap.json', {'type': f'{MOD}:dye_swap', 'category': 'misc'})
 
     out('data/minecraft/tags/blocks/mineable/pickaxe.json',
         {'replace': False, 'values': [f'{MOD}:comms_relay_{v}' for v in VARIANTS]})

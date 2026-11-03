@@ -62,27 +62,26 @@ Sneak + right-click – Never touches the case, so you can place blocks against 
 All six are in the **Tactical Compass** creative tab.
 
 ## Crafting
-**Tactical Compass** — iron ingots around a vanilla compass, body dyes on top, LED dye and redstone on the bottom.
+**Tactical Compass** (shaped)
 
 ```
-[Body dye] [Iron ingot] [Body dye 2]
-[Iron ingot] [Compass]  [Iron ingot]
-[LED dye]  [Redstone]   [LED dye]
+[Dye]        [Iron ingot] [Redstone]
+[Iron ingot] [Compass]    [Iron ingot]
+[ empty ]    [Iron ingot] [ empty ]
 ```
 
-**Communications Relay** — a lightning rod antenna over a redstone block, wrapped in iron.
+**Communications Relay** (shapeless): Dye + Compass + Redstone torch + Block of iron.
 
-```
-[Body dye]   [Lightning rod]  [Body dye 2]
-[Iron ingot] [Redstone block] [Iron ingot]
-[Iron ingot] [LED dye]        [Iron ingot]
-```
+The dye picks the colourway, and the dye slot can be left empty:
 
-| Variant | Body dye | Body dye 2 | LED dye |
-| --- | --- | --- | --- |
-| Black | Black dye | Black dye | Blue dye |
-| Olive | Green dye | Green dye | Red dye |
-| Camo | Green dye | Brown dye | Lime dye |
+| Dye | Colourway |
+| --- | --- |
+| None | Olive (red LED) |
+| Green dye | Olive (red LED) |
+| Black dye | Black (blue LED) |
+| Brown dye | Camo (green LED) |
+
+**Re-dyeing**: Put any compass or relay in the crafting grid with a black, green or brown dye to switch it to that colourway. A compass keeps its relay link. An item can't be dyed into the colour it already is.
 
 ## Requirements
 Minecraft **1.20.1** with **Forge 47.x** (built against 47.4.28).
