@@ -919,7 +919,7 @@ def main():
                 'thirdperson_righthand': tp, 'thirdperson_lefthand': tp,
                 'firstperson_righthand': ident, 'firstperson_lefthand': ident, 'gui': ident,
                 'ground': {'rotation': [0, 0, 0], 'translation': [0, 2, 0], 'scale': [0.5, 0.5, 0.5]},
-                'fixed': {'rotation': [90, 0, 0], 'translation': [0, 0, 0], 'scale': [1, 1, 1]},
+                'fixed': {'rotation': [0, 180, 0], 'translation': [0, 0, 0], 'scale': [1, 1, 1]},
                 'head': {'rotation': [0, 0, 0], 'translation': [0, 6, 0], 'scale': [1, 1, 1]},
             }})
 
@@ -958,6 +958,8 @@ def main():
             'firstperson_righthand': {'rotation': [15, 160, 0], 'translation': [0, 1, 0], 'scale': [0.4, 0.4, 0.4]},
             'firstperson_lefthand': {'rotation': [15, 200, 0], 'translation': [0, 1, 0], 'scale': [0.4, 0.4, 0.4]},
             'gui': {'rotation': [30, 205, 0], 'translation': [0, 0, 0], 'scale': [0.625, 0.625, 0.625]},
+            # item frame: open front faces out, pulled forward half the case depth so it sits on the frame
+            'fixed': {'rotation': [0, 0, 0], 'translation': [0, 0, -4], 'scale': [0.5, 0.5, 0.5]},
         }}
         out(f'assets/{MOD}/models/item/{name}.json', model_json(rm['full'], size, tex, {**extra, **item_display}))
         variants = {}
